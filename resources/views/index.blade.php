@@ -5,7 +5,7 @@
   @php
     $us = session('user');
   @endphp
-  <main>
+  <main class="fondoIndex rounded-top">
     <div class="container">
       <div class="row inicio">
         <div class=" col-6 descripcion d-flex align-items-center flex-column">
@@ -14,7 +14,41 @@
           <p class="indexDesc my-3">Gracias a nuestras nuevas tecnologias podras dar rienda suelta a tu imaginacion y tus tiradas de dados se sentiran igual que si estuvieras en fisico</p>
         </div>
         <div class="col-6 imgInicio d-flex align-items-center">
-          <img src="{{asset("img/dados.jpg")}}" class="img-fluid dados">
+          <div class="container dadoGira">
+            <div class="one">
+              <div class="point-5"></div>
+            </div>
+            <div class="two">
+              <div class="point-3"></div>
+              <div class="point-7"></div>
+            </div>
+            <div class="three">
+              <div class="point-3"></div>
+              <div class="point-5"></div>
+              <div class="point-7"></div>
+            </div>
+            <div class="four">
+              <div class="point-1"></div>
+              <div class="point-3"></div>
+              <div class="point-7"></div>
+              <div class="point-9"></div>
+            </div>
+            <div class="five">
+                  <div class="point-1"></div>
+                  <div class="point-3"></div>
+                  <div class="point-5"></div>
+                  <div class="point-7"></div>
+                  <div class="point-9"></div>
+            </div>
+            <div class="six">
+                  <div class="point-1"></div>
+                  <div class="point-3"></div>
+                  <div class="point-4"></div>
+                  <div class="point-6"></div>
+                  <div class="point-7"></div>
+                  <div class="point-9"></div>
+            </div>
+        </div>
         </div>
       </div>
     </div>
@@ -126,7 +160,7 @@
       </div>
     </div>
     <!-- Juegos y sistemas -->
-    <div class="container my-5">
+    <div class="container mt-5">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="titulo text-center mb-5">
@@ -147,7 +181,7 @@
         <div class="logoContainer px-2 px-lg-3 text-center">
         <div class="row d-flex justify-content-center ">
           <a href="#" class="mx-4 col-12 col-md-2"><img src="{{asset('img/FATE-Core.png')}}" class="img logo align-content-middle" style="margin: 0 auto"></a>
-          <a href="#" class="mx-4 col-12 col-md-2 mt-sm-0 mt-5"><img src="{{asset('img/Okinawaa.png')}}" class="img logo align-content-middle" style="margin: 0 auto"></a>
+          <a href="#" class="mx-4 col-12 col-md-2 mt-sm-0 mt-5" style="display: flex;align-items: center;"><img src="{{asset('img/Okinawaa.png')}}" class="img logo" style="margin: 0 auto;"></a>
           <!-- Damn -->
           <a href="#" class="mx-4 col-12 col-md-2"><img src="{{asset('img/Forehead.png')}}" class="img logo" style="margin: 0 auto"></a></div>
         </div>
@@ -178,3 +212,9 @@
   });
 </script>
 </html>
+<style>
+  footer{
+      position: relative;
+  margin-bottom: 100%;
+  }
+  </style>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Partidas extends Model
 {
     use HasFactory;
-
+    public $timestamps = false;
     protected $table = 'partidas';
 
     protected $fillable = [

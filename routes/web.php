@@ -7,6 +7,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\perfilController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -24,10 +25,6 @@ Route::view('/', 'index')->name('index');
 Route::view('/welcome', 'welcome')->name('welcome');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
 //Tienda 
 
@@ -48,7 +45,7 @@ Route::get('/partidas', [GameController::class, 'index'])->name('partidas');
 Route::get('/partida-Detalle', [GameController::class, 'getPartida'])->name('getPartida'); 
 Route::post('/partidas', [GameController::class, 'filtradoPartidas'])->name("filterGames");
 Route::get('/partidas/crear', [GameController::class, 'formulario'])->name("formularioPartida");
-Route::post('/partidas', [GameController::class, 'crearPartida'])->name("crearPartida");
+Route::post('/partida/creado', [GameController::class, 'crearPartida'])->name("crearPartida");
 
 //Perfil
 
@@ -56,4 +53,20 @@ Route::post('/perfil', [perfilController::class, 'index'])->name("perfil");
 Route::post('/perfil/bioRedirect', [perfilController::class, 'setBio'])->name("actuBio");
 Route::post('/perfil/iconRedirect', [perfilController::class, 'changeIcon'])->name("actuIcon");
 Route::post('/perfil/bannerRedirect', [perfilController::class, 'changeBanner'])->name("actuBanner");
+
+//Dashboard
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::group(['auth:sanctum', 'verified'], function () {
+    Route::resource('gestionProductos', \App\Http\Controllers\DashboardController::class);
+    Route::resource('gestionBlog', \App\Http\Controllers\DashboardBlogController::class);
+});
+
+//ayuda enviada
+Route::view('/ayuda', 'ayuda')->name('ayuda');
+Route::post('/ayuda/gracias',[AyudaController::class, 'index'])->name('ayudaEnviada');
+
+
 

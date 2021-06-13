@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(blogSeeder::class);
         $this->call(usuariosSeeder::class);
         $this->call(PartidasSeeder::class);
+        $this->call(usuariospartidasSeeder::class);
     }
 }

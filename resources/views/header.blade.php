@@ -57,7 +57,7 @@
                 <!-- Tienda -->
                 <li class="nav-item me-3 me-lg-1">
                     <a class="nav-link" href="{{route('shop')}}">
-                        <span><i class="fas fa-shopping-bag fa-lg tienda" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tienda"></i></span>
+                        <span><i class="fas fa-shopping-bag fa-lg tienda hvr-bounce-in" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tienda"></i></span>
                     </a>
                 </li>
                 <!-- blog -->
@@ -82,7 +82,7 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li>
-                            <form method="POST" action="{{ route('perfil') }}">
+                            <form method="POST" action="{{ route('perfil') }}" style=" margin-bottom: 0;">
                                 @csrf
                                 <input type="hidden" name="idus" value="{{$us->id}}">
                                 <a class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();" style="cursor: pointer">
@@ -92,7 +92,7 @@
                         </li>
                       
                     @if ($us->type == 0)
-                    <li><a href="{{route('/dashboard')}}">Dashboard</a></li>
+                    <li><a  class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a></li>
                     @endif
                     <li>
                     <form method="POST" action="{{ route('logout') }}">

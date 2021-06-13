@@ -1,27 +1,24 @@
 @include('header')
 
-<div class="introBlog-container container">
-        <div class="background-title-blogs"></div>
-        <h1 class="titleBlogs">FireBlog</h1>
+<div class="container-fluid fondoGradienteBlog">
+    <div class="introBlog-container container d-flex justify-content-center">
+        <div class="background-title-blogs margenDerecha d-flex justify-content-center" style=""><h1 class="titleLanding titulo headline-blog-detail">FireBlog</h1></div>
+        
     <div class="row">
         <div class="col-12 col-md-7 videoCol">
             <div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/rMxx8QSAd18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="frame"></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/V1FqLT43lvg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="frame"></iframe>
             </div>
         </div>
 
-        <div class="col-5 col-md-4 mx-4">
-            <h1>Prueba</h1>
-            <div>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sit itaque facilis, ullam, dolor provident quod eaque iste est facere voluptates reiciendis! Ipsum maxime illo delectus iusto recusandae numquam sapiente.</p>
-            </div>
-            <div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptates, in nisi quod incidunt reiciendis adipisci obcaecati! Voluptates, corporis cumque unde at earum accusantium, in excepturi dolore nisi eveniet inventore!
+        <div class="col-11 col-md-4 mx-4 col-sm-5">
+            <h1 class="titulo textoBlog">¡Bienvenido!</h1>
+            <div class="textoBlog">
+                <p class="cuerpoIntroBlog">¡Bienvenido a nuestro blog de noticias sobre Rol! Aquí encontraras lo último de lo último en noticias sobre manuales, nuevos manuales... ¡Pero no te preocupes si vemos algo relacionado con el rol que sea interesante te lo contaremos! Entra y disfruta de tu estancia. <br> Si te encuentras mas perdido que un ogro en una sastrería... No busques mas lejos que te ponemos un video sobre lo que es rolear y de incluso los orígenes de la palabra para que aumentes tu inteligencia a nivel máximo.</p>
             </div>
         </div>
     </div>
 </div>
-
     <div class="entradas-container container">
 
     
@@ -40,11 +37,11 @@
             </div>
         
             @foreach ($entradas as $entrada)
-            <div class="col-6 my-5 mx-auto justify-content-center d-flex justify-content-center">
+            <div class="col-12 my-5 mx-auto justify-content-center d-flex justify-content-center col-sm-6">
                 <div class="card" style="width: 25rem;">
                 <img class="card-img-top" src="{{$entrada->image}}" alt="Card image cap" style="height: 15rem">
                 <div class="card-body">
-                  <h5 class="card-title">{{$entrada->headline}}</h5>
+                  <h5 class="card-title tituloEntrada">{{$entrada->headline}}</h5>
                   <p class="card-text">{{$entrada->body}}</p>
                   <form action="{{route('blogDetail')}}" method="POST">
                     @csrf
@@ -57,8 +54,9 @@
             @endforeach
     </div>
  </div>
-</div>
 
+</div>
+@include('footer')
 <script type="text/javascript">
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
@@ -117,5 +115,3 @@
 }
 
 </script>
-
-@include('footer')

@@ -1,19 +1,22 @@
 @include('header')
-
-<div class="container-fluid">
-    <div class="row background-blog" style="background-image: url({{$entrada->image}});">
-        <div class="col-12 d-flex justify-content-center">
-            <h2 class="headline-blog-detail">{{$entrada->headline}}</h2>
+<header class="masthead" style="background-image: url('{{$entrada->image}}')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="post-heading">
+                    <h1 class="h1Blog">{{$entrada->headline}}</h1>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="row bodyRowBlog">
-        <div class="col-12 d-flex bodyCol">
-            <p class="bodyBlog">{{$entrada->body}}</p>
+</header>
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+               <p class="bodyBlog">{{$entrada->body}}</p>
+            </div>
         </div>
     </div>
-</div>
-
-
-
+</article>
 @include('footer')

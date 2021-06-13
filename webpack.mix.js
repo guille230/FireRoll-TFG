@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+mix.options({ processCssUrls: false });
 
 /*
  |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ mix.js('resources/js/app.js', 'public/js')
 if (mix.inProduction()) {
     mix.version();
 }
+
+mix.sass('resources/sass/style.scss', 'public/css');

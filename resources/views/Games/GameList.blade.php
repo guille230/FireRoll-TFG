@@ -8,6 +8,7 @@
                         <h1 class="text-uppercase fs-1">Partidas</h1>
                     </div>
                 </div>
+                @auth
                 <div class="row d-flex justify-content-center my-2">
                     <div class="col-12 col-md-5">
                         <a href="{{route('formularioPartida')}}" class="btn btn-primary">
@@ -15,6 +16,7 @@
                         </a>
                     </div>
                 </div>
+                @endauth
                 <div class="row d-flex justify-content-evenly">
                     <div class="col-12 col-sm-2 d-flex align-items-center">
                         <form action="{{route('filterGames')}}" method="POST" class="d-flex">

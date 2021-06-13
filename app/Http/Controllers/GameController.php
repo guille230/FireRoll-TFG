@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Search;
 use App\Models\Partidas;
 use Carbon\Carbon;
+use Barryvdh\Debugbar\Facade as Debugbar;
 
 class GameController extends Controller
 {
@@ -16,12 +17,12 @@ class GameController extends Controller
     }
 
     public function getPartida(Request $request){
-
         $id = request('id');
-        $partida = DB::table('partidas')->where('id',$id)->first();
         
-        $usuarios = DB::table('usuarios')->where('id',$id)->first();
-
+        $partida = DB::table('partidas')->where('id',$id)->first();
+        $creator = $partida->creator;        
+        $usuarios = DB::table('usuarios')->where('id',$creator)->first();
+        Debugbar::info($usuarios);
         $usupa = DB::table('usuarios_partidas')->where('id_usuarios',$id)->first();
 
         return view('Games.gamesDetail',['partidas' => $partida,'usuarios'=>$usuarios,'usuarios_partidas'=>$usupa]);
@@ -69,7 +70,7 @@ class GameController extends Controller
         $sistema = request('sistema');
         $tipo = request('tipo');
         $duracion = request('duracion');
-        $descripcion = request('descripcion');
+        $descripcion = request('desc');
         $tags = request('tags');
         $fecha = Carbon::now();
         $fecha = $fecha->toDateString();

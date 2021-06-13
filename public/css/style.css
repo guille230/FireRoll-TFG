@@ -1,330 +1,766 @@
-
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
-.enlaceRe{
-    font-size: 1.2rem;
+
+.enlaceRe {
+  font-size: 1.2rem;
 }
+
 /* html,
 body {
     position: relative;
     height: 100%;
 } */
-
-h1, h2, h3{
-    font-family: 'Odibee Sans', cursive;
+h1, h2, h3 {
+  font-family: "Odibee Sans", cursive;
 }
 
-.title{
-    font-size: 1.3rem;
-    font-family: 'Odibee Sans', cursive;
+.ayudaCont .titleAyuda {
+  font-size: 2.2rem;
+}
+.ayudaCont h1 {
+  font-size: 1.5rem;
+}
+.ayudaCont p {
+  padding-left: 1rem;
+}
+.ayudaCont .row {
+  padding-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-family: "Odibee Sans", cursive;
 }
 
 .dropdown-menu.show {
-    top: 85% !important;
+  top: 85% !important;
 }
 
-.dropdown-menu{
-    min-width: 0rem !important;
-    position: absolute !important;
+.dropdown-menu {
+  min-width: 0rem !important;
+  position: absolute !important;
 }
+
 .dropdown-menu[data-bs-popper] {
-    left: 20% !important;
+  left: 20% !important;
 }
 
- body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
 }
-
 
 .swiper-container {
-    width: 100%;
-    height: 100%;
-  }
-
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-  }
-  .bordecarta {
-    border-radius: 0.9rem;
+  width: 100%;
+  height: 100%;
 }
-.margenArr{
-    margin-top: 1.5rem;
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bordecarta {
+  border-radius: 0.9rem;
+}
+
+.margenArr {
+  margin-top: 1.5rem;
 }
 
 .fas,
 .fab {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-
 /*Animations Menu*/
-
 .casa:hover {
-     color: rgb(65, 153, 65); 
+  color: #419941;
 }
 
 .dado:hover {
-    color: red;
-    -webkit-animation: spin 1.5s ease;
-    -moz-animation: spin 1.5s ease;
-    animation: spin 1.5s ease;
+  color: #ff0000;
+  -webkit-animation: spin 1.5s ease;
+  animation: spin 1.5s ease;
 }
 
 .tienda:hover {
-    color:#3b5998;       
+  color: #3b5998;
 }
 
-.blog:hover{
-    color: #6441a5;
+.blog:hover {
+  color: #6441a5;
 }
-
 
 /*Dado*/
-@-moz-keyframes spin {
-    100% {
-        -moz-transform: rotate(360deg);
-    }
-}
-
 @-webkit-keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
-
 @keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*footer Icons*/
+.fa-twitter:hover {
+  color: #00acee;
 }
 
-  /*footer Icons*/
-.fa-twitter:hover{
-    color:#00acee;
+.fa-facebook-f:hover {
+  color: #3b5998;
 }
 
-.fa-facebook-f:hover{
-    color:#3b5998;
+.fa-instagram:hover {
+  color: #a1257a;
 }
 
-.fa-instagram:hover{
-    color: #a1257a;
+.fa-twitch:hover {
+  color: #6441a5;
 }
 
-.fa-twitch:hover{
-    color: #6441a5;
+.footer-first-col {
+  margin-top: 2rem;
 }
-
-.footer-first-col{
-    margin-top: 2rem;
-}
-
 
 .dados {
-    width: 100%;
-    max-height: 70%;
-    transform:skewX(12deg);
-    
+  width: 100%;
+  max-height: 70%;
+  transform: skewX(12deg);
 }
 
-.descripcion{
-    align-self: center;
+.descripcion {
+  align-self: center;
 }
 
-.indexDesc{
-    font-size: 1.2rem;
+.indexDesc {
+  font-size: 1.2rem;
 }
 
-.indexCards{
-    font-size: 2rem;
+.indexCards {
+  font-size: 2rem;
 }
 
 .fondo {
-    width: 200rem;
+  width: 200rem;
 }
 
 .margenizq {
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 .margender {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
 
 .fondoTest {
-    background-image: url("../img/fondoSwiper.png");
+  background-image: url("../img/fondoSwiper.png");
 }
 
 .cont {
-    max-width: 1320px;
+  max-width: 1320px;
 }
 
 .personitas {
-    max-width: 7rem;
+  max-width: 7rem;
 }
 
 .autor {
-    color: white;
-    font-size: 2rem;
-    font-weight: 700;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .testimonio {
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .logo {
-    width: 10rem;
+  width: 10rem;
 }
 
-.footer{
-    height: 5rem;
+.footer {
+  height: 5rem;
 }
 
-.card-text{
+.card-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.background-title-blogs {
+  position: absolute;
+  width: 49%;
+  height: 56%;
+  margin-left: -18rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.titleBlogs {
+  z-index: 3;
+  position: relative;
+}
+
+.blogsList {
+  margin-top: 5rem;
+}
+
+.video {
+  margin-top: 8rem;
+  width: -webkit-fill-available;
+  height: 30rem;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+}
+
+.videoCol {
+  z-index: 2;
+}
+
+.formRow {
+  justify-content: flex-end;
+}
+
+.background-blog {
+  width: 100%;
+  height: 20rem;
+}
+
+.headline-blog-detail {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.background-blog {
+  justify-content: center;
+  align-items: center;
+}
+
+.bodyCol {
+  padding-left: 4rem;
+}
+
+.bodyBlog {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.textoPerfil {
+  font-size: 1.5rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.textoTitulo {
+  font-size: 2rem;
+}
+
+.ImagenPerfil {
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid gray;
+  border-radius: 6rem;
+  padding: 3px;
+}
+
+.fa-pencil-alt:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.bannerPencil {
+  position: absolute;
+  text-align: end;
+  padding-right: 1.6rem;
+  padding-top: 0.7rem;
+}
+
+.hamButton {
+  margin-left: 3rem;
+}
+
+.carrito {
+  position: fixed;
+  top: 20px;
+  right: 10%;
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+}
+
+.carritoIcon {
+  font-size: 2rem;
+}
+
+.table-wrapper {
+  max-height: 50vh;
+  width: 100%;
+  overflow: auto;
+  display: inline-block;
+}
+
+.table-name {
+  font-size: 1.2rem;
+}
+
+.buttonLink {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.discord {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background-color: #7289DA;
+}
+
+.disLink {
+  padding-top: 4px;
+  align-items: center;
+}
+
+.disIcon {
+  font-size: 2rem;
+  align-self: center;
+}
+
+.producto {
+  width: 20rem;
+  height: 17rem;
+}
+
+.fondoIndex {
+  background: #c463b9;
+  background: linear-gradient(135deg, #c463b9 10%, white 51%, #6249c9 99%);
+}
+
+.fondoGradienteBlog {
+  background: #c463b9;
+  background: linear-gradient(135deg, #c463b9 10%, white 51%, #6249c9 99%);
+}
+
+@media screen and (max-width: 430px) {
+  .fondoGradienteBlog {
+    background: #c463b9;
+    background: linear-gradient(180deg, #c463b9 0%, white 50%, #6249c9 100%);
+  }
+}
+/* Dado Grande */
+.imgInicio {
+  height: 100vh;
+  perspective: 1000px;
+}
+
+.imgInicio,
+.dadoGira,
+.dadoGira > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.dadoGira {
+  width: 250px;
+  height: 250px;
+  background-color: transparent;
+  animation: rolling 10s 1.5s linear infinite reverse;
+  /* transform: rotateX(90deg); */
+}
+
+.dadoGira > div {
+  position: absolute;
+  font-size: 10em;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #ffffff69;
+  background: linear-gradient(45deg, #4332a3, #607d8b);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 30px;
+  gap: 10px;
+}
+
+.dadoGira > div > div {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 95%;
+  height: 95%;
+}
+
+.point-1 {
+  grid-area: 1/1;
+}
+
+.point-3 {
+  grid-area: 1/3;
+}
+
+.point-4 {
+  grid-area: 3/2;
+}
+
+.point-5 {
+  grid-area: 2/2;
+}
+
+.point-5 {
+  grid-area: 2/2;
+}
+
+.point-7 {
+  grid-area: 3/1;
+}
+
+.point-9 {
+  grid-area: 3/3;
+}
+
+/**********************************/
+.one {
+  transform: translateZ(125px);
+}
+
+.two {
+  transform: translateZ(-125px) rotateY(-90deg);
+  transform-origin: left;
+}
+
+.three {
+  transform: translateZ(-125px) rotateY(180deg);
+}
+
+.four {
+  transform: translateZ(-125px) rotateY(90deg);
+  transform-origin: right;
+}
+
+.five {
+  transform: translateY(-125px) rotateX(90deg);
+}
+
+.six {
+  transform: translateY(125px) rotateX(90deg) rotateY(180deg);
+}
+
+@-webkit-keyframes rolling {
+  0% {
+    transform: rotate3d(3, 4, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(3, 4, 1, 720deg);
+  }
+}
+
+@keyframes rolling {
+  0% {
+    transform: rotate3d(3, 4, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(3, 4, 1, 720deg);
+  }
+}
+.margenDerecha {
+  margin-right: 20rem;
+}
+
+.titulo {
+  font-size: 4rem;
+}
+
+.cuerpoIntroBlog {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 430px) {
+  .textoBlog {
     width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    text-align: center;
+  }
+}
+.titleBlogs {
+  font-size: 4rem;
+  text-align: center;
 }
 
-.background-title-blogs{
-    background-image: url('https://p4.wallpaperbetter.com/wallpaper/104/151/773/material-miui-9-stock-wallpaper-preview.jpg');
-    position: absolute;
-    width: 49%;
-    height: 56%;
-    margin-left: -18rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 1;
+.titleLanding {
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 1rem;
+  background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.titleBlogs{
-    z-index: 3;
-    position: relative;
+.tituloEntrada {
+  font-size: 2rem;
 }
 
-.blogsList{
-    margin-top: 5rem;
+.tituloPartida {
+  font-size: 3rem;
+  color: white;
 }
 
-.video{
-    margin-top: 8rem;
-    width: -webkit-fill-available;
-    height: 30rem;
+.tituloPartida:hover {
+  color: brown;
 }
 
-.frame{
-    width: 100%;
-    height: 100%;
+.fondoTit:hover {
+  background-color: gray;
 }
 
-.introBlog-container{
-    background-color: papayawhip;
+.detallesPartida {
+  font-size: 1.5rem;
 }
 
-.videoCol{
-    z-index: 2;
+.enviar {
+  background-color: #005f9e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
 }
 
-.formRow{
-    justify-content: flex-end;
+.enviar:hover {
+  background-color: #c96060;
+  color: black;
 }
 
-.background-blog{
-    width: 100%;
-    height: 20rem;
+.nombreProducto {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 2rem;
 }
 
-.headline-blog-detail{
-    width: max-content;
-    background-color: white;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    font-weight: 600;
+.textoProductos {
+  font-size: 1.3rem;
 }
 
-.background-blog{
-    justify-content: center; 
-    align-items: center;
+.productTitle {
+  font-size: 3rem;
 }
 
-.bodyCol{
-    padding-left: 4rem;
+.productoDescription {
+  font-size: 1.2rem;
 }
 
-.bodyBlog{
-    font-size: 1.3rem;
-    letter-spacing: 1px;
+.enviarCarrro {
+  background-color: #005f9e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 2px 1px;
 }
 
-.textoPerfil{
-    font-size: 1.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-.textoTitulo{
-    font-size: 2rem;
-}
-.ImagenPerfil{
-    width: 12rem;
-    height: 12rem;
-    border: 1px solid gray;
-    border-radius: 6rem;
-    padding: 3px;
+.enviarDiscord {
+  background-color: #005f9e;
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
 }
 
-.fa-pencil-alt:hover{
-    color: blue;
-    cursor:pointer;
+.enviarDiscord:hover {
+  background-color: #c96060;
+  color: black;
 }
 
-.bannerPencil{
-    position: absolute;
-    text-align: end;
-    padding-right: 1.6rem;
-    padding-top: 0.7rem;
+.anchoEntero {
+  width: 100%;
 }
 
-.hamButton{
-    margin-left: 3rem;
+.sistema {
+  width: 5rem;
+  height: 5rem;
 }
 
-.carrito{
-    position: fixed;
-    top: 20px;
-    right: 10%;
-    z-index: 999;
-    display: block;
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    border: none;
+.bannerImage {
+  height: 30rem;
 }
 
-.carritoIcon{
-    font-size: 2rem;
+header.masthead {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(8rem + 57px);
+  padding-bottom: 8rem;
+  background: no-repeat center center;
+  background-color: #6c757d;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+header.masthead:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+header.masthead .page-heading,
+header.masthead .post-heading,
+header.masthead .site-heading {
+  color: #fff;
+}
+
+header.masthead .page-heading,
+header.masthead .site-heading {
+  text-align: center;
+}
+
+header.masthead .page-heading h1, header.masthead .page-heading .h1,
+header.masthead .site-heading h1,
+header.masthead .site-heading .h1 {
+  font-size: 3rem;
+}
+
+header.masthead .page-heading .subheading,
+header.masthead .site-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.625rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+  font-size: 3.25rem;
+}
+
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+
+header.masthead .post-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.75rem 0 2rem;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+header.masthead .post-heading .meta {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading .meta a {
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    padding-top: 12.5rem;
+    padding-bottom: 12.5rem;
+  }
+
+  header.masthead .page-heading h1, header.masthead .page-heading .h1,
+header.masthead .site-heading h1,
+header.masthead .site-heading .h1 {
+    font-size: 5rem;
+  }
+
+  header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+    font-size: 3.5rem;
+  }
+
+  header.masthead .post-heading .subheading {
+    font-size: 1.875rem;
+  }
+}
+header.masthead .post-heading,
+header.masthead .site-heading {
+  color: #fff;
+}
+
+header.masthead .post-heading h1, header.masthead .post-heading .h1 {
+  font-size: 3.25rem;
+}
+
+header.masthead .post-heading .meta,
+header.masthead .post-heading .subheading {
+  line-height: 1.1;
+  display: block;
+}
+
+header.masthead .post-heading .subheading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.75rem 0 2rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading .meta {
+  font-size: 1.25rem;
+  font-weight: 300;
+  font-style: italic;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+header.masthead .post-heading .meta a {
+  color: #fff;
+}
+
+.h1Blog {
+  font-size: calc(1.375rem + 1.5vw);
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  .h1Blog {
+    font-size: 3.5rem;
+  }
+}
+.bodyBlog {
+  font-size: 1rem;
+  white-space: break-spaces;
 }

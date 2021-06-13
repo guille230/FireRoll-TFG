@@ -36,6 +36,7 @@ class ShopController extends Controller
 
     public function añadirCarrito(Request $request){
         $id = request('idProducto');
+        $total = 0;
         if(Session::has('carrito')){
             Session::push('carrito', [
                 'id_producto' => $id,
@@ -62,9 +63,12 @@ class ShopController extends Controller
                         'id_producto' => $id_producto,
                         'cantidad' => $cantidad
                     );
+                    $obj = DB::table('productos')->where('id',$id_producto)->first();
+                    $total += $cantidad * $obj->cost;
                   }
 
                 Session::put('carrito', $items);
+                Session::put('total',$total);
         } else{
             Session::put('carrito', [
                 0 => [
@@ -83,10 +87,17 @@ class ShopController extends Controller
         $arr = request('productos');
         $prod = unserialize(base64_decode($arr));
         $us = session('user');
+        $total = request('total');
+
+        foreach ($prod as $producto) {
+            $obj = DB::table('productos')->where('id',$producto['id_producto'])->first();
+            $newStock = $obj->stock - $producto['cantidad'];
+            DB::table('productos')->where('id',$producto['id_producto'])->update(['stock' => $newStock]);
+        }
 
        $pedido = Pedidos::create([
             'address' => $us->address,
-            'cost' => 2,
+            'cost' => $total,
             'user' => $us->id
         ]);
 
@@ -98,7 +109,8 @@ class ShopController extends Controller
         }
 
         Session::forget('carrito');
-        if(!Session::has('key')){
+        Session::forget('total');
+        if(!Session::has('carrito')){
             return view('shop.compra');
         }
     }

@@ -1,7 +1,18 @@
 @php
     $us = session('user');
 @endphp
-
+{{-- Imports --}}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/2817974b50.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+{{-- End Imports --}}
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,6 +29,16 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('gestionProductos.index') }}" :active="request()->routeIs('gestionProductos.index')">
+                        {{ __('Productos') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('gestionBlog.index') }}" :active="request()->routeIs('gestionProductos.index')">
+                        {{ __('Blog') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -80,6 +101,7 @@
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                     <img class="h-8 w-8 rounded-full object-cover" src="{{$us->iconImage }}" alt="{{ Auth::user()->name }}" />
+                                    <span> {{$us->username}}</span>
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
@@ -95,13 +117,27 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <!-- Account Management -->
-                            <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
-                            </div>
+                            <form method="POST" action="{{ route('perfil') }}">
+                                @csrf
+                                <input type="hidden" name="idus" value="{{$us->id}}">
+                                <x-jet-dropdown-link href="{{ route('perfil') }}"
+                                         onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                    {{ __('Perfil') }}
+                                </x-jet-dropdown-link>
+                            </form>
 
-                            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+
+                            {{-- <form method="POST" action="{{ route('perfil') }}" style=" margin-bottom: 0;">
+                                @csrf
+                                <input type="hidden" name="idus" value="{{$us->id}}">
+                                <a class="dropdown-item" onclick="event.preventDefault(); this.closest('form').submit();" style="cursor: pointer">
+                                    Perfil
+                                </a>
+                            </form> --}}
+
+                            <x-jet-dropdown-link href="{{ route('index') }}">
+                                {{ __('Home') }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -119,7 +155,7 @@
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Salir') }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>

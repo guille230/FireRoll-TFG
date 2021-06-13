@@ -28,35 +28,26 @@
   @if ($user->id == $me->id)
   <i class="fas fa-pencil-alt bannerPencil" data-bs-toggle="modal" data-bs-target="#modalBanner"></i> 
   @endif
-<img src="{{$user->bannerImage}}" alt="Banner" width="100%" height="100%">
+<img src="{{$user->bannerImage}}" class="bannerImage" alt="Banner">
 </div>
 <div class="row mt-4 mb-4">
-    <div class="col-4 d-flex justify-content-center">
-        <img class="ImagenPerfil"src="{{$user->iconImage}}" alt="Icon">
+    <div class="col-6 d-flex justify-content-center">
+        <img class="ImagenPerfil" src="{{$user->iconImage}}" alt="Icon">
         @if ($user->id == $me->id)
         <i class="fas fa-pencil-alt" data-bs-toggle="modal" data-bs-target="#modalIcon"></i>   
         @endif
     </div>
-    <div class="col-4">
+    <div class="col-6 d-flex align-items-center">
         <div class="container">
             <div class="row">
-                <div class="col 12 d-flex justify-content-center">
+                <div class="col 12 d-flex justify-content-center my-2">
                     <h2 class="textoTitulo">Nombre: <span class="textoPerfil">{{$user->username}}</span></h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col 12 d-flex justify-content-center">
-                    <h2 class="textoTitulo">Tipo: <span class="textoPerfil">{{$user->type}}</span></h2>
-                </div>
+              <div class="col 12 d-flex justify-content-center my-2">
+                <h2 class="textoTitulo">Sistema Favorito: <span class="textoPerfil">{{$user->preferences}}</span></h2> 
             </div>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="container">
-            <div class="row">
-                <div class="col 12 d-flex justify-content-center">
-                    <h2 class="textoTitulo">Sistema Favorito: <span class="textoPerfil">{{$user->preferences}}</span></h2> 
-                </div>
             </div>
         </div>
     </div>
@@ -73,14 +64,21 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4 d-flex justify-content-center border-end border-dark">
-            @foreach ($partidas as $partida )
-            <span class="textoPerfil  w-70">{{$partida->nombre}}</span> 
-            @endforeach
-            
+        <div class="col-4 justify-content-center border-end border-dark">
+          <ul class="text-center">
+              @foreach ($partidas as $partida )
+              <li class="py-2">
+                <form action="{{route('getPartida')}}" method="POST">
+                  @csrf
+                  <input type="hidden" name="idpart" value="{{$partida->id}}">
+                  <button class="buttonLink hvr-sweep-to-right rounded" onclick="this.form.submit()"><span class="textoPerfil w-70 px-3 py-2">{{$partida->nombre}}</span></button>
+                </form>
+              </li>
+              @endforeach
+            </ul> 
         </div>
         <div class="col-8 d-flex justify-content-center">
-            <div class="row">
+            <div class="row d-flex align-content-center justify-content-center">
                 <div class="col-12 text-center">
                     <p class="textoPerfil">{{$user->bio}}</p>
                 </div>
@@ -98,10 +96,10 @@
         </div>
         <div class="modal-body">
             <form action="{{route('actuBio')}}" method="POST">
-                @csrf
+              @csrf
                 <input type="hidden" name="id" value="{{$user->id}}">
                 <label for="bio-text" class="col-form-label">Biografia:</label>
-                <textarea class="form-control" id="bio-text" name="bio"></textarea>
+                <textarea class="form-control" id="bio-text" name="bio">{{$user->bio}}</textarea>
                 <input type="submit" value="Insertar" class="btn btn-success my-3">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </form> 

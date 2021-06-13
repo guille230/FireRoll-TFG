@@ -16,6 +16,7 @@
   @php
    $cart = session('carrito');
    $us = session('user'); 
+   $total = session('total');
    $cartSerialized = base64_encode(serialize($cart));
   @endphp
   
@@ -47,10 +48,12 @@
         </tr>
         @endforeach
         <tr class="dropdown-item">
-          <td class="productoCart d-flex justify-content-end">
+          <td class="productoCart d-flex justify-content-between">
+            <span class="fw-bold align-self-center fs-3">Total:{{$total}}€</span>
             <form action="{{route('purchase')}}" method="POST">
               @csrf
               <input type="hidden" name="productos" value="{{$cartSerialized}}">
+              <input type="hidden" name="total" value="{{$total}}">
               <input type="hidden" name="idus" value="{{$us->id}}">
               <input type="submit" value="comprar" class="btn btn-success">
             </form>
